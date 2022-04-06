@@ -4,14 +4,15 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <id>Df.AuditLogging.Middleware</id>
+        <authors>Paw B</authors>
+        <owners>Paw B</owners>
+        <description>Audit logging middleware</description>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Df.AuditLogging" Version="1.0.0.4" />
       <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Df.AuditLogging\Df.AuditLogging.csproj" />
     </ItemGroup>
 
 </Project>

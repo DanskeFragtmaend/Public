@@ -4,6 +4,10 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <id>Df.AuditLogging</id>
+        <authors>Paw B</authors>
+        <owners>Paw B</owners>
+        <description>Audit logging</description>
     </PropertyGroup>
 
 </Project>
