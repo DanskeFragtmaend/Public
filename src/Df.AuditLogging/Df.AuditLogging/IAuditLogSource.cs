@@ -4,6 +4,6 @@
 public interface IAuditLogSource
 {
     Task InsertAsync(Audit audit);
-    Task InsertAsync(IList<Audit> audits);
+    Task InsertAsync(IReadOnlyList<Audit> audits);
     Task<IList<Audit>> GetAuditsAsync(string dataId, int detailLevel);
 }

@@ -19,10 +19,12 @@ public class AuditLogCorrelator : IAuditLogCorrelator
         _audits.Enqueue(audit);
     }
 
-    public void AddAudits(IEnumerable<Audit> audits)
+    public void AddAudits(IReadOnlyList<Audit> audits)  
     {
-        foreach (var audit in audits) 
+        foreach (var audit in audits)
+        {
             AddAudit(audit);
+        }
     }
 
     public async Task Save()

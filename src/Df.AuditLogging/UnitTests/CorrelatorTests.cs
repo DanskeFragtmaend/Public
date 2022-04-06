@@ -12,10 +12,10 @@ public class CorrelatorTests
     public void Test_Correlator_Save_To_Source()
     {
         var sourceMoq = new Mock<IAuditLogSource>();
-        sourceMoq.Setup(c => c.InsertAsync(It.IsAny<IList<Audit>>())).Returns(Task.CompletedTask);
+        sourceMoq.Setup(c => c.InsertAsync(It.IsAny<IReadOnlyList<Audit>>())).Returns(Task.CompletedTask);
         var correlator = new AuditLogCorrelator(sourceMoq.Object);
         correlator.AddAudit(new Audit{Action = AuditActions.Edit});
         correlator.Save();
-        sourceMoq.Verify(c => c.InsertAsync(It.IsAny<IList<Audit>>()), Times.Once);
+        sourceMoq.Verify(c => c.InsertAsync(It.IsAny<IReadOnlyList<Audit>>()), Times.Once);
     }
 }

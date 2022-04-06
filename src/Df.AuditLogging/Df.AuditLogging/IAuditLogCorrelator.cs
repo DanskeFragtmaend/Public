@@ -9,7 +9,7 @@ public interface IAuditLogCorrelator
     
     /// <summary>Adds multiple audits to the session.</summary>
     /// <param name="audits">The audits to add</param>
-    void AddAudits(IEnumerable<Audit> audits);
+    void AddAudits(IReadOnlyList<Audit> audits);
     
     /// <summary>Called when the session is ending.</summary>
     /// <returns>Task for async/await</returns>
