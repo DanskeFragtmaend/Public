@@ -14,7 +14,7 @@ public class AuditLogCorrelatorMiddleware
     public async Task InvokeAsync(HttpContext context, IAuditLogCorrelator auditLogCorrelator, IAuditUserProvider userProvider)
     {
         await _next(context);
-        
+
         // Run after all other middleware has executed
         try
         {
@@ -51,7 +51,7 @@ public class AuditLogCorrelatorMiddleware
     /// <summary>This method will try to get a request ID from the query</summary>
     private static string GetDataId(HttpRequest request)
     {
-        if (request.Query.ContainsKey("id")) 
+        if (request.Query.ContainsKey("id"))
             return request.Query["id"];
         if (request.Query.ContainsKey("dataId"))
             return request.Query["dataId"];
