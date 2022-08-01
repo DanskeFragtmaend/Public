@@ -5,6 +5,12 @@ using Microsoft.Extensions.Logging;
 
 namespace Df.ApiExceptionMiddleware;
 
+/// <summary>
+/// A middleware for handling exceptions in your API.
+/// The returned StatusCode is determined by the <see cref="ExceptionHandler"/>.
+/// The returned ErrorCode is a deterministic hash generated from the stacktrace of the exception.
+/// The ErrorCode logged together with the exception.
+/// </summary>
 public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
@@ -24,12 +30,13 @@ public class ExceptionMiddleware
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, ex.Message);
-            await HandleExceptionAsync(context, ex);
+            var errorCode = ex.GenerateId();
+            _logger.LogError(ex, "ErrorCode: {ErrorCode}, Message: {Message}", errorCode.ToString(), ex.Message);
+            await HandleExceptionAsync(context, ex, errorCode);
         }
     }
     
-    private async Task HandleExceptionAsync(HttpContext context, Exception exception)
+    private async Task HandleExceptionAsync(HttpContext context, Exception exception, int errorCode)
     {
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
@@ -44,7 +51,7 @@ public class ExceptionMiddleware
         {
             StatusCode = context.Response.StatusCode,
             Message = message,
-            ErrorCode = exception.GenerateId()
+            ErrorCode = errorCode
         }.ToString());
     }
 }
