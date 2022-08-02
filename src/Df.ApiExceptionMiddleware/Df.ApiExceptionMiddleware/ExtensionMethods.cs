@@ -27,5 +27,5 @@ public static class ExtensionMethods
     public static int GenerateId(this Exception ex)
     {
         return $"{ex.GetType().Name}{ex.StackTrace}".GetDeterministicHashCode();
-    }
+    } 
 }
