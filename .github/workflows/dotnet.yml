@@ -28,4 +28,4 @@ jobs:
     - name: Pack
       run: dotnet pack src/Df.ApiExceptionMiddleware/Df.ApiExceptionMiddleware/Df.ApiExceptionMiddleware.csproj -o out
     - name: Nuget push
-      run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.TOKEN }} --source "github"
+      run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.TOKEN }} --source https://nuget.pkg.github.com/DanskeFragtmaend/index.json
