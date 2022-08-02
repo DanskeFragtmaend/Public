@@ -28,4 +28,4 @@ public static class ExtensionMethods
     {
         return $"{ex.GetType().Name}{ex.StackTrace}".GetDeterministicHashCode();
     }
-} 
+}
