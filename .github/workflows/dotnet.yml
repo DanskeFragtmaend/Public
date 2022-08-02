@@ -3,10 +3,10 @@ name: .NET
 on:
   push:
     branches: [ "master" ]
-    paths: src/Df.ApiExceptionMiddleware
+    paths: src/Df.ApiExceptionMiddleware/**
   pull_request:
     branches: [ "master" ]
-    paths: src/Df.ApiExceptionMiddleware
+    paths: src/Df.ApiExceptionMiddleware/**
 
 jobs:
   build:
