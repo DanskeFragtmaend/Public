@@ -25,4 +25,7 @@ jobs:
       run: dotnet restore src/Df.ApiExceptionMiddleware/Df.ApiExceptionMiddleware/Df.ApiExceptionMiddleware.csproj
     - name: Build
       run: dotnet build --no-restore src/Df.ApiExceptionMiddleware/Df.ApiExceptionMiddleware/Df.ApiExceptionMiddleware.csproj
-    
+    - name: Pack
+      run: dotnet pack src/Df.ApiExceptionMiddleware/Df.ApiExceptionMiddleware/Df.ApiExceptionMiddleware.csproj -o out
+    - name: Nuget push
+      run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.TOKEN }} --source "github"
