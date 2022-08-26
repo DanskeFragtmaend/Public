@@ -5,6 +5,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RepositoryUrl>https://github.com/DanskeFragtmaend/Public</RepositoryUrl>
+        <Description>Middleware to handle exceptions thrown in the pipeline</Description>
+        <Copyright>Danske Fragtmænd A/S</Copyright>
+        <PackageTags>danske fragtmænd;api;exception;middleware;error;pipeline</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>

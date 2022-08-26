@@ -24,3 +24,6 @@ When using this middleware, don't catch exceptions in your controllers (or mappe
 
 ## ErrorCode
 The ErrorCode is a deterministic hash generated from the stacktrace of the thrown exception. If the stacktrace differs in any way the ErrorCode will be different.
+
+## Source code
+https://www.nuget.org/packages/Df.ApiExceptionMiddleware
