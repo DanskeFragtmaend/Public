@@ -9,7 +9,7 @@
         <owners>Paw B</owners>
         <description>A framework to handle audit logging in a more consistent way</description>
         <Copyright>Danske Fragtmænd A/S</Copyright>
-        <RepositoryUrl>https://www.nuget.org/packages/Df.AuditLogging.Middleware</RepositoryUrl>
+        <RepositoryUrl>https://github.com/DanskeFragtmaend/Public</RepositoryUrl>
         <PackageTags>audit;log;correlation;asp.net;logging;middleware</PackageTags>
     </PropertyGroup>
 
@@ -21,7 +21,7 @@
     <ItemGroup>
       <None Include="..\readme.md">
         <Link>readme.md</Link>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>
 
