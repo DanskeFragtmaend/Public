@@ -16,7 +16,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\readme.md">
+        <None Include="..\readme.md" Pack="true" PackagePath="\">
             <Link>readme.md</Link>
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
