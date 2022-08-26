@@ -11,18 +11,19 @@
         <Copyright>Danske Fragtmænd A/S</Copyright>
         <RepositoryUrl>https://github.com/DanskeFragtmaend/Public</RepositoryUrl>
         <PackageTags>audit;log;correlation;asp.net;logging;middleware</PackageTags>
+        <PackageReadmeFile>readme.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Df.AuditLogging" Version="1.0.0.4" />
-      <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+        <PackageReference Include="Df.AuditLogging" Version="1.0.0.4"/>
+        <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="..\readme.md">
-        <Link>readme.md</Link>
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+        <None Include="..\readme.md" Pack="true" PackagePath="\">
+            <Link>readme.md</Link>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
 </Project>
