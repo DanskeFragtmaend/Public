@@ -10,4 +10,11 @@
         <description>Audit logging</description>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Include="..\readme.md">
+        <Link>readme.md</Link>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
