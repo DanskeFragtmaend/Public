@@ -5,9 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <id>Df.AuditLogging.Middleware</id>
-        <authors>Paw B</authors>
+        <authors>Danske Fragtmænd A/S</authors>
         <owners>Paw B</owners>
-        <description>Audit logging middleware</description>
+        <description>A framework to handle audit logging in a more consistent way</description>
+        <Copyright>Danske Fragtmænd A/S</Copyright>
+        <RepositoryUrl>https://www.nuget.org/packages/Df.AuditLogging.Middleware</RepositoryUrl>
+        <PackageTags>audit;log;correlation;asp.net;logging;middleware</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
