@@ -349,6 +349,4 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-src/Df.AuditLogging/.idea/.idea.Df.AuditLogging/.idea/
-
-src/Df.ApiExceptionMiddleware/.idea/.idea.Df.ApiExceptionMiddleware/.idea/
+**/.idea/
