@@ -5,7 +5,6 @@ EndProject
 
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4B68F640-E5CD-434B-8C5F-B1261E6E8797}"
 	ProjectSection(SolutionItems) = preProject
-					readme.md = readme.md
 		Df.ServiceControllerExtensions.nuspec = Df.ServiceControllerExtensions.nuspec
 	EndProjectSection
 EndProject

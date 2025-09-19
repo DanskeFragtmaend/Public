@@ -4,6 +4,17 @@
         <TargetFrameworks>net7.0;net8.0;net9.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Df.ServiceControllerExtensions</PackageId>
+        <Authors>Danske Fragtmænd A/S</Authors>
+        <Description>General extension methods for the ServiceCollection class.</Description>
+        <RepositoryUrl>https://github.com/DanskeFragtmaend/Public</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>readme.md</PackageReadmeFile>
+        <DebugType>portable</DebugType>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>
+            $(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb
+        </AllowedOutputExtensionsInPackageBuildOutputFolder>
     </PropertyGroup>
 
 
@@ -21,4 +32,7 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" Condition="'$(TargetFramework)' == 'net9.0'" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Include="readme.md" Pack="true" PackagePath="" />
+    </ItemGroup>
 </Project>
