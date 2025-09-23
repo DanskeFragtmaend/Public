@@ -10,7 +10,9 @@ public static class ServiceControllerExtensions
     /// <remarks>This method makes it easier to both add the configuration object to the service collection and get it for other uses in startup.</remarks>
     public static T AddConfiguration<T>(this IServiceCollection services, IConfiguration configuration) where T : class
     {
-        var settings = configuration.GetSection(typeof(T).Name).Get<T>();
+        var section = configuration.GetSection(typeof(T).Name);
+        var settings = section.Get<T>()
+                       ?? throw new InvalidOperationException($"Configuration section '{section.Path}' is missing or invalid for type '{typeof(T).Name}'.");
         services.AddSingleton(_ => settings);
         return settings;
     }
