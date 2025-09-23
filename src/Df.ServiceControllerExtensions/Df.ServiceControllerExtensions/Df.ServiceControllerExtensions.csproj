@@ -7,8 +7,10 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Df.ServiceControllerExtensions</PackageId>
         <Authors>Danske Fragtmænd A/S</Authors>
+        <Copyright>Danske Fragtmænd A/S</Copyright>
         <Description>General extension methods for the ServiceCollection class.</Description>
         <RepositoryUrl>https://github.com/DanskeFragtmaend/Public</RepositoryUrl>
+        <PackageTags>danske fragtmænd;api;middleware;pipeline;extension;servicecontroller;controller;service</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
         <DebugType>portable</DebugType>
