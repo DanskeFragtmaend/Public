@@ -1,19 +1,34 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 
 namespace Df.AuditLogging.Middleware;
 
 public class AuditLogCorrelatorMiddleware
 {
     private readonly RequestDelegate _next;
+    private readonly AuditLogCorrelatorOptions _options;
 
-    public AuditLogCorrelatorMiddleware(RequestDelegate next)
+    public AuditLogCorrelatorMiddleware(RequestDelegate next, IOptions<AuditLogCorrelatorOptions> options)
     {
         _next = next;
+        _options = options.Value;
     }
 
     public async Task InvokeAsync(HttpContext context, IAuditLogCorrelator auditLogCorrelator, IAuditUserProvider userProvider)
     {
-        await _next(context);
+        Exception? requestException = null;
+
+        try
+        {
+            await _next(context);
+        }
+        catch (Exception ex)
+        {
+            requestException = ex;
+
+            if (!_options.SaveOnException)
+                throw;
+        }
 
         // Run after all other middleware has executed
         try
@@ -39,6 +54,9 @@ public class AuditLogCorrelatorMiddleware
         }
 
         await auditLogCorrelator.Save();
+
+        if (requestException != null)
+            throw requestException;
     }
 
     /// <summary>Gets the context correlation ID if it exists</summary>
