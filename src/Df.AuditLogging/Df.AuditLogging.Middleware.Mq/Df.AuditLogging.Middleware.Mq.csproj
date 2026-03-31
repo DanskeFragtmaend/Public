@@ -21,7 +21,11 @@
     <ItemGroup>
         <PackageReference Include="Df.MqMessaging" Version="1.2.0.525" />
         <PackageReference Include="Df.MessagingTypes" Version="1.0.0.475-beta" />
-        <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" Condition="'$(TargetFramework)' == 'net6.0'" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.0" Condition="'$(TargetFramework)' == 'net7.0'" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" Condition="'$(TargetFramework)' == 'net8.0'" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.0" Condition="'$(TargetFramework)' == 'net9.0'" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.0-preview.3.25171.5" Condition="'$(TargetFramework)' == 'net10.0'" />
     </ItemGroup>
 
     <ItemGroup>
