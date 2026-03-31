@@ -1,11 +1,20 @@
+using System.Reflection;
+using System.Xml;
 using Df.ApiExceptionMiddleware;
+using log4net;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Logging.ClearProviders();
+builder.Logging.AddLog4Net("log4net.config");
+
+var log4NetConfiguration = new XmlDocument();
+log4NetConfiguration.Load(File.OpenRead("log4net.config"));
+var repo = LogManager.CreateRepository(Assembly.GetEntryAssembly(), typeof(log4net.Repository.Hierarchy.Hierarchy));
+log4net.Config.XmlConfigurator.Configure(repo, log4NetConfiguration["log4net"]);
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
