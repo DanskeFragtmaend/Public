@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <id>Df.AuditLogging.Middleware.Mq</id>
+        <authors>Danske Fragtmænd A/S</authors>
+        <owners>Paw B</owners>
+        <description>Audit logging middleware that publishes audits as MQ messages</description>
+        <Copyright>Danske Fragtmænd A/S</Copyright>
+        <RepositoryUrl>https://github.com/DanskeFragtmaend/Public</RepositoryUrl>
+        <PackageTags>audit;log;correlation;asp.net;logging;middleware;mq;messaging</PackageTags>
+        <PackageReadmeFile>readme.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Df.AuditLogging\Df.AuditLogging.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Df.MqMessaging" Version="1.2.0.525" />
+        <PackageReference Include="Df.MessagingTypes" Version="1.0.0.475-beta" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\readme.md" Pack="true" PackagePath="\">
+            <Link>readme.md</Link>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+</Project>
